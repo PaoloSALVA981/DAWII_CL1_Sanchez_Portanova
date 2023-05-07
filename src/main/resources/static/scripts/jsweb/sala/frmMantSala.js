@@ -1,16 +1,17 @@
 $(document).on("click", "#btnagregar", function(){
-    $("#txtdescsala").val("");
-    $("#txtnroasientos").val("");
-    $("#hddidsala").val("0");
-    $("#cboestado").empty();
+    $("#txtape").val("");
+     $("#txtnom").val("");
+     $("#txtpro").val("");
+    $("#hddidalumno").val("0");
+    $("#cboalumno").empty();
     $.ajax({
         type: "GET",
-        url: "/Estado/listarEstados",
+        url: "/Alumno/listarAlumnos",
         dataType: "json",
         success: function(resultado){
             $.each(resultado, function(index, value){
-                $("#cboestado").append(
-                    `<option value="${value.idestado}">${value.descestado}</option>`
+                $("#cboalumno").append(
+                    `<option value="${value.idalumno}">${value.ape}</option>`
                 )
             })
         }
